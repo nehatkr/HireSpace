@@ -48,12 +48,12 @@ const JobListing = () => {
   const {
      fn: fnCompanies,
       data: companies 
+      loading: loadingCompanies,
     } = useFetch(getCompanies);
 
   useEffect(() => {
     if (isLoaded) {
       fnCompanies();
-      console.log(companies);
     }
   }, [isLoaded]);
 
@@ -186,15 +186,16 @@ const JobListing = () => {
         <Select
           value={company_id}
           onValueChange={(value) => setCompany_id(value)}
+          disabled={loadingCompanies}
         >
           <SelectTrigger>
-            <SelectValue placeholder="Filter by Company" />
+            <SelectValue placeholder={loadingCompanies ? "Loading companies..." : "Filter by Company"} />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               {companies?.map(({ name, id }) => {
                 return (
-                  <SelectItem key={name} value={id}>
+                  <SelectItem key={name} value={id.toString()}>
                     {name}
                   </SelectItem>
                 );

@@ -59,17 +59,19 @@ const LandingPage = () => {
             delay: 2000,
           }),
         ]}
-        className="w-full py-10 slide-up stagger-4"
+        className="w-full py-10 slide-up stagger-4 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10"
       >
-        <CarouselContent className="flex gap-5 sm:gap-20 items-center">
+        <CarouselContent className="flex gap-5 sm:gap-20 items-center px-4">
           {companies.map(({ name, id, path }) => {
             return (
-              <CarouselItem key={id} className="basis-1/3 lg:basis-1/6 ">
+              <CarouselItem key={id} className="basis-1/3 lg:basis-1/6">
+                <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                 <img
                   src={path}
                   alt={name}
-                  className="h-9 sm:h-14 object-contain transition-all duration-300 hover:scale-110 filter grayscale hover:grayscale-0"
+                  className="h-8 sm:h-12 object-contain transition-all duration-300 group-hover:scale-110"
                 />
+                </div>
               </CarouselItem>
             );
           })}
