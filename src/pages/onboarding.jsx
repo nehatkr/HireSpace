@@ -35,24 +35,30 @@ const Onboarding = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center mt-32">
-      <h2 className="gradient-title font-extrabold text-7xl sm:text-8xl tracking-tighter">
+    <div className="flex flex-col items-center justify-center mt-32 fade-in">
+      <h2 className="gradient-title font-extrabold text-7xl sm:text-8xl tracking-tighter slide-up animate-pulse-slow">
         I am a...
       </h2>
-      <div className="mt-16 grid grid-cols-2 gap-4 w-full md:px-40">
+      <div className="mt-16 grid grid-cols-2 gap-6 w-full md:px-40 slide-up stagger-1">
         <Button
           variant="blue"
-          className="h-36 text-2xl"
+          className="h-36 text-2xl hover-lift group relative overflow-hidden glass-effect border-0"
           onClick={() => handleRoleSelection("candidate")}
         >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 transform scale-0 group-hover:scale-100 transition-transform duration-500 rounded-lg"></div>
+          <span className="relative z-10 font-semibold">
           Candidate
+          </span>
         </Button>
         <Button
           variant="destructive"
-          className="h-36 text-2xl"
+          className="h-36 text-2xl hover-lift group relative overflow-hidden glass-effect border-0"
           onClick={() => handleRoleSelection("recruiter")}
         >
+          <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-pink-500 transform scale-0 group-hover:scale-100 transition-transform duration-500 rounded-lg"></div>
+          <span className="relative z-10 font-semibold">
           Recruiter
+          </span>
         </Button>
       </div>
     </div>

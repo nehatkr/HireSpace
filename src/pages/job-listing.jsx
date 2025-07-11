@@ -69,28 +69,31 @@ const JobListing = () => {
   }
 
   return (
-    <div>
-      <h1 className="gradient-title font-extrabold text-6xl sm:text-6xl text-center pb-8">
+    <div className="fade-in">
+      <h1 className="gradient-title font-extrabold text-6xl sm:text-6xl text-center pb-8 slide-up">
         Latest jobs
       </h1>
 
       <form
         onSubmit={handleSearch}
-        className="h-14 flex flex-row w-full gap-2 items-center mb-3"
+        className="h-14 flex flex-row w-full gap-2 items-center mb-3 slide-up stagger-1"
       >
         <Input
           type="text"
           placeholder="Search Jobs by Title.."
           name="search-query"
-          className="h-full flex-1 px-4 text-md"
+          className="h-full flex-1 px-4 text-md glass-effect border-0 focus:ring-2 focus:ring-blue-500 transition-all duration-300"
         />
-        <Button type="submit" className="h-full sm:w-28" variant="blue">
+        <Button type="submit" className="h-full sm:w-28 hover-lift group relative overflow-hidden" variant="blue">
+          <span className="relative z-10">
           Search
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
         </Button>
       </form>
 
-      <div className="flex flex-col sm:flex-row gap-2">
-        <Select value={location} onValueChange={(value) => setLocation(value)}>
+      <div className="flex flex-col sm:flex-row gap-2 slide-up stagger-2">
+        <Select value={location} onValueChange={(value) => setLocation(value)} className="transition-all duration-300">
           <SelectTrigger>
             <SelectValue placeholder="Filter by Location" />
           </SelectTrigger>
@@ -127,11 +130,14 @@ const JobListing = () => {
           </SelectContent>
         </Select>
         <Button
-          className="sm:w-1/2"
+          className="sm:w-1/2 hover-lift group relative overflow-hidden"
           variant="destructive"
           onClick={clearFilters}
         >
+          <span className="relative z-10">
           Clear Filters
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
         </Button>
       </div>
 
@@ -140,19 +146,20 @@ const JobListing = () => {
       )}
 
       {loadingJobs === false && (
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 slide-up stagger-3">
           {Jobs?.length ? (
-            Jobs.map((job) => {
+            Jobs.map((job, index) => {
               return (
-                <JobCard
-                  key={job.id}
+                <div key={job.id} className={`fade-in stagger-${Math.min(index % 5 + 1, 5)}`}>
+                  <JobCard
                   job={job}
                   savedInit={job?.saved?.length>0}
                 />
+                </div>
               );
             })
           ) : (
-            <div> No Jobs Found 😢</div>
+            <div className="text-center text-gray-400 text-xl py-12 slide-up"> No Jobs Found 😢</div>
           )}
         </div>
       )}

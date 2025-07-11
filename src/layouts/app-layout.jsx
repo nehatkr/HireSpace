@@ -4,13 +4,17 @@ import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   return(
-     <div>
+     <div className="relative">
     <div className="grid-background"></div>
-    <main className="min-h-screen container">
+    <main className="min-h-screen container relative z-10">
     <Header />
     <Outlet />
     </main>
-    <div className="p-6 text-center bg-gray-800 mt-10 absolute left-0 right-0 " >Copywrite &copy; 2025 HireSpace</div>
+    <footer className="p-6 text-center glass-effect mt-10 relative z-10 border-t border-white/20">
+      <p className="text-gray-400 transition-colors duration-300 hover:text-white">
+        Copyright &copy; 2025 HireSpace - Built with ❤️
+      </p>
+    </footer>
     </div>
   );
 };
