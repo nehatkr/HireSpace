@@ -97,7 +97,7 @@ const JobListing = () => {
   // Calculate pagination
   const totalJobs = Jobs?.length || 0;
   const totalPages = Math.ceil(totalJobs / jobsPerPage);
-  const startIndex = (currentPage - 1) * jobsPerPage;
+  const startIndex = ((currentPage - 1) * jobsPerPage);
   const endIndex = startIndex + jobsPerPage;
   const currentJobs = Jobs?.slice(startIndex, endIndex) || [];
 
