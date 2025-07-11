@@ -51,10 +51,9 @@ const JobListing = () => {
     } = useFetch(getCompanies);
 
   useEffect(() => {
-    if (isLoaded){
-    fnCompanies();
-    console.log(companies);
-    
+    if (isLoaded) {
+      fnCompanies();
+      console.log(companies);
     }
   }, [isLoaded]);
 
@@ -314,26 +313,6 @@ const JobListing = () => {
         </>
       )}
       </div>
-    </div>
-  );
-};
-
-export default JobListing;
-
-              return (
-                <div key={job.id} className={`fade-in stagger-${Math.min(index % 5 + 1, 5)}`}>
-                  <JobCard
-                  job={job}
-                  savedInit={job?.saved?.length>0}
-                />
-                </div>
-              );
-            })
-          ) : (
-            <div className="text-center text-gray-400 text-xl py-12 slide-up"> No Jobs Found 😢</div>
-          )}
-        </div>
-      )}
     </div>
   );
 };
