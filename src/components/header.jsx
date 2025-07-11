@@ -7,7 +7,7 @@ import {
   SignIn,
   useUser,
 } from "@clerk/clerk-react";
-import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
+import { BriefcaseBusiness, Heart, PenBox, User } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -62,6 +62,11 @@ const Header = () => {
           }}
         >
           <UserButton.MenuItems>
+            <UserButton.Link
+              label="Profile"
+              labelIcon={<User size={15} />}
+              href="/profile"
+            />
             <UserButton.Link
               label="My Jobs"
               labelIcon={<BriefcaseBusiness size={15} />}

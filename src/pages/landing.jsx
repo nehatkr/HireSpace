@@ -76,7 +76,22 @@ const LandingPage = () => {
         </CarouselContent>
       </Carousel>
 
-      <img src="/banner.jpeg" className="w-full rounded-2xl shadow-2xl hover-lift slide-up stagger-5" />
+      <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-2xl hover-lift slide-up stagger-5 group">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-shift"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <div className="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+              <svg className="w-10 h-10 text-white animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
+                <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white">Connect. Apply. Succeed.</h3>
+            <p className="text-white/80 max-w-md mx-auto">Join thousands of professionals finding their perfect career match</p>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6 slide-up stagger-5">
         <Card className="hover-lift glass-effect border-0 group">

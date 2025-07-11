@@ -97,6 +97,12 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+  
+  .animate-gradient-shift {
+    background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #ec4899, #10b981);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+  }
 }
 
 @keyframes fadeIn {
@@ -112,6 +118,13 @@
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
 }
 
 @keyframes pulse {

@@ -56,7 +56,17 @@ const JobPage = () => {
         <h1 className="gradient-title font-extrabold pb-3 text-4xl sm:text-6xl animate-pulse-slow">
           {job?.title}
         </h1>
-        <img src={job?.company?.logo_url} className="h-12 transition-transform duration-300 hover:scale-110" alt={job?.title} />
+        <div className="flex items-center gap-3">
+          <img 
+            src={job?.company?.logo_url} 
+            className="h-16 w-16 object-contain bg-white rounded-lg p-2 transition-transform duration-300 hover:scale-110 shadow-lg" 
+            alt={job?.company?.name} 
+          />
+          <div className="text-right">
+            <h3 className="text-lg font-semibold text-gray-300">{job?.company?.name}</h3>
+            <p className="text-sm text-gray-400">Company</p>
+          </div>
+        </div>
       </div>
 
       <div className="flex justify-between slide-up stagger-1">

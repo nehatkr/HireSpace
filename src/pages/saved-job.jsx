@@ -41,6 +41,7 @@ const SavedJobs = () => {
                   job={saved?.job}
                   onJobAction={fnSavedJobs}
                   savedInit={true}
+                  isMyJob={false}
                 />
               );
             })

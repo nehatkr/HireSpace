@@ -9,6 +9,7 @@ import JobListing from "./pages/job-listing";
 import PostJob from "./pages/post-job";
 import SavedJob from "./pages/saved-job";
 import MyJobs from "./pages/my-jobs";
+import Profile from "./pages/profile";
 import { ThemeProvider } from "./components/ui/theme-provider";
 import ProtectedRoute from "./components/protected-route";
 
@@ -65,6 +66,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <MyJobs />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
           </ProtectedRoute>
         ),
       },

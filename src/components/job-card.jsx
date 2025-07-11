@@ -75,7 +75,18 @@ const JobCard = ({
       </CardHeader>
       <CardContent className="flex flex-col gap-4 flex-1 relative z-10">
         <div className="flex justify-between">
-          {job.company && <img src={job.company.logo_url} className="h-6 transition-transform duration-300 hover:scale-110" />}
+          {job.company && (
+            <div className="flex items-center gap-2">
+              <img 
+                src={job.company.logo_url} 
+                className="h-8 w-8 object-contain bg-white rounded-md p-1 transition-transform duration-300 hover:scale-110 shadow-sm" 
+                alt={job.company.name}
+              />
+              <span className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                {job.company.name}
+              </span>
+            </div>
+          )}
           <div className="flex gap-2 items-center text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
             <MapPinIcon size={15} /> {job.location}
           </div>
