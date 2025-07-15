@@ -24,7 +24,7 @@ const LandingPage = () => {
           <div className="flex flex-col items-center justify-center">
             <span className="block">Find Your Dream Job</span>
             <div className="flex items-center gap-2 sm:gap-6 slide-up stagger-1 mt-2">
-              <span>and get</span>
+              <span className="block">and get</span>
               <img
                 src="/logo.png"
                 alt="Hired logo"
@@ -34,14 +34,15 @@ const LandingPage = () => {
           </div>
         </h1>
         <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl slide-up stagger-2 max-w-2xl mx-auto leading-relaxed">
-          Explore throusands of job listings or find the perfect candidate
+          Explore thousands of job listings or find the perfect candidate
         </p>
       </section>
+
       <div className="flex gap-6 justify-center slide-up stagger-3">
         <Link to="/jobs">
           <Button variant="blue" size="xl" className="hover-lift group relative overflow-hidden">
             <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-            Find Jobs
+              Find Jobs
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </Button>
@@ -49,30 +50,31 @@ const LandingPage = () => {
         <Link to="/post-job">
           <Button size="xl" variant="destructive" className="hover-lift group relative overflow-hidden">
             <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-            post a Job
+              Post a Job
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </Button>
         </Link>
       </div>
+
       <Carousel
         plugins={[
           Autoplay({
             delay: 2000,
           }),
         ]}
-        className="w-full py-10 slide-up stagger-4 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10"
+        className="w-full py-10 slide-up stagger-4 company-carousel rounded-2xl"
       >
         <CarouselContent className="flex gap-5 sm:gap-20 items-center px-4">
           {companies.map(({ name, id, path }) => {
             return (
               <CarouselItem key={id} className="basis-1/3 lg:basis-1/6">
-                <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-                <img
-                  src={path}
-                  alt={name}
-                  className="h-8 sm:h-12 object-contain transition-all duration-300 group-hover:scale-110"
-                />
+                <div className="company-logo-container flex items-center justify-center p-4 rounded-lg">
+                  <img
+                    src={path}
+                    alt={name}
+                    className="h-8 sm:h-12 object-contain transition-all duration-300 hover:scale-110"
+                  />
                 </div>
               </CarouselItem>
             );
