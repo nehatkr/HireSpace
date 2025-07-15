@@ -33,13 +33,6 @@ const LandingPage = () => {
             </div>
           </div>
         </h1>
-            <img
-              src="/logo.png"
-              alt="Hired logo"
-              className="h-14 sm:h-24 lg:h-32 transition-transform duration-500 hover:scale-110 hover:rotate-3"
-            />
-          </div>
-        </h1>
         <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl slide-up stagger-2 max-w-2xl mx-auto leading-relaxed">
           Explore throusands of job listings or find the perfect candidate
         </p>
