@@ -20,10 +20,19 @@ const LandingPage = () => {
   return (
     <main className="flex flex-col gap-10 sm:gap-20 py-10 sm:py-20 relative">
       <section className="text-center fade-in">
-        <h1 className="flex flex-col items-center justify-center gradient-title text-4xl font-extrabold sm:text-6xl lg:text-8xl tracking-tighter py-4 animate-pulse-slow">
-          Find Your Dream Job{" "}
-          <div className="flex items-center gap-2 sm:gap-6 slide-up stagger-1">
-            and get{" "}
+        <h1 className="gradient-title text-4xl font-extrabold sm:text-6xl lg:text-8xl tracking-tighter py-4 animate-pulse-slow">
+          <div className="flex flex-col items-center justify-center">
+            <span className="block">Find Your Dream Job</span>
+            <div className="flex items-center gap-2 sm:gap-6 slide-up stagger-1 mt-2">
+              <span>and get</span>
+              <img
+                src="/logo.png"
+                alt="Hired logo"
+                className="h-14 sm:h-24 lg:h-32 transition-transform duration-500 hover:scale-110 hover:rotate-3"
+              />
+            </div>
+          </div>
+        </h1>
             <img
               src="/logo.png"
               alt="Hired logo"
