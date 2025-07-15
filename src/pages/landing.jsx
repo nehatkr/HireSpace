@@ -22,14 +22,14 @@ const LandingPage = () => {
       <section className="text-center fade-in">
         <h1 className="flex flex-col items-center justify-center gradient-title text-4xl font-extrabold sm:text-6xl lg:text-8xl tracking-tighter py-4 animate-pulse-slow">
           Find Your Dream Job{" "}
-          <span className="flex items-center gap-2 sm:gap-6 slide-up stagger-1">
+          <div className="flex items-center gap-2 sm:gap-6 slide-up stagger-1">
             and get{" "}
             <img
               src="/logo.png"
               alt="Hired logo"
               className="h-14 sm:h-24 lg:h-32 transition-transform duration-500 hover:scale-110 hover:rotate-3"
             />
-          </span>
+          </div>
         </h1>
         <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl slide-up stagger-2 max-w-2xl mx-auto leading-relaxed">
           Explore throusands of job listings or find the perfect candidate
